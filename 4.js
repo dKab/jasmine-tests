@@ -14,7 +14,7 @@ describe("function fmap(mixin, fn)", function() {
 	});
 
 	it("should return new function", function() {
-	    expect(Object.prototype.toString.call(bar)).toEqual("[object Function]");
+	    expect(bar).toBeOfType("Function");
 	});
 
 	describe("the returned function", function() {

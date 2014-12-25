@@ -3,7 +3,7 @@ describe("Function 'take'", function() {
 	var gen = sequence(base, step); 
 	it("should return an array", function() {
 		var res = take(gen, callCount);
-		expect(res.constructor).toBe(Array);
+		expect(res).toBeOfType("Array");
 	});
 	it("should call function passed as first arg number of times passed as 2nd arg", function() {
 		var realCallCount = 0;

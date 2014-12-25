@@ -3,7 +3,7 @@ describe("Generator", function() {
 			step = 3;
 	var generator  = sequence(startingValue, step);
 	it("should return another function", function() {
-		expect(Object.prototype.toString.call(generator)).toEqual("[object Function]");
+		expect(generator).toBeOfType("Function");
 	});
 
 	describe("that function", function () {

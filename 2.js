@@ -1,18 +1,17 @@
-describe("Function 'take'", function() {
-	var step = 2, base = 0, callCount = 3;
-	var gen = sequence(base, step); 
+describe("Function 'take'", function() { 
+	var callCount, spy; 
+	beforeEach(function() {
+		callCount = 5;
+		spy = jasmine.createSpy(function() { });
+	});
+
 	it("should return an array", function() {
-		var res = take(gen, callCount);
+		var res = take(function() { }, callCount);
 		expect(res).toBeOfType("Array");
 	});
 	it("should call function passed as first arg number of times passed as 2nd arg", function() {
-		var realCallCount = 0;
-		var tempObj = {
-			foo: gen
-		};
-		spyOn(tempObj, 'foo');
-		take(tempObj.foo, callCount);
-		expect(tempObj.foo.calls.count()).toEqual(callCount);
+		take(spy, callCount);
+		expect(spy.calls.count()).toEqual(callCount);
 	});
 	describe("the array", function() {
 		it("should contain sequence of results returned by the function", function() { 
@@ -22,7 +21,7 @@ describe("Function 'take'", function() {
 				arr[i] = rand;
 			}
 			var tempObj = {
-				foo: gen
+				foo: function() { }
 			};
             spyOn(tempObj, 'foo').and.returnValue(rand);
 			var ret = take(tempObj.foo, callCount);

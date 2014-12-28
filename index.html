@@ -1,1 +1,122 @@
-Hello world!
+<!DOCTYPE='html'>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Упражнения JavaScript</title>
+  <link rel="stylesheet" href="eval.css">
+  <script type="text/javascript" src="lib/jasmine-2.1.3/jasmine.js"></script>
+  <script type="text/javascript" src="myHtmlReporter.js"></script>
+  <script type="text/javascript" src="eval.js"></script>
+  <script type="text/javascript" src="SpecHelper.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="container">
+  <h1>Упражнения JavaScript</h1>
+  <nav>
+    <ul>
+      <li><a href="?spec=1">1</a></li>
+      <li><a href="?spec=2">2</a></li>
+      <li><a href="?spec=3">3</a></li>
+      <li><a href="?spec=4">4</a></li>
+    </ul>
+  </nav>
+  <section id="tasks">
+    <div class="task " id="task_1">
+      <header><h2><span>Шаг 1</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию создания генератора sequence(start, step). Она при вызове возвращает другую функцию-генератор, которая при каждом вызове дает число на 1 больше, и так до бесконечности. Начальное число, с которого начинать отсчет, и шаг, задается при создании генератора. Шаг можно не указывать, тогда он будет равен одному. Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.</p>
+        <pre>
+          var generator = sequence(10, 3);
+          var generator2 = sequence(7, 1);
+
+          console.log(generator()); // 10
+          console.log(generator()); // 13
+
+          console.log(generator2()); // 7
+
+          console.log(generator()); // 16
+
+          console.log(generator2()); // 8</pre>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_1">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_1" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_1"></div>
+    </div>
+    <div class="task " id="task_2">
+      <header><h2><span>Шаг 2</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов. Она нам пригодится для отладки:</p>
+        <pre>
+          var gen2 = sequence(0, 2);
+          console.log(take(gen2, 5)); // [0, 2, 4, 6, 8 ]</pre>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_2">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_2" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_2"></div>
+    </div>
+    <div class="task " id="task_3">
+      <header><h2><span>Шаг 3</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию map(fn, array), которая принимает на вход функцию и массив, и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:</p>
+        <pre>
+          function square(x) { return x * x; } // возведение в квадрат
+          console.log(map(square, [1, 2, 3, 4])); // [1, 4, 9, 16]
+          console.log(map(square, [])); // []</pre>
+        <p>Обрати внимание: функция не должна изменять переданный ей массив:</p>
+        <pre>var arr = [1, 2, 3];
+          console.log(map(square, arr)); // [1, 4, 9]
+          console.log(arr); // [1, 2, 3]
+        </pre>
+        <p>Это аналог array_map из PHP.</p>
+      </div>
+      <form action=""  onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_3">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_3" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_3"></div>
+    </div>
+    <div class="task " id="task_4">
+      <header>
+        <h2><span>Шаг 4</span></h2><div class="percentage">Процент решенных задач: <span></span></div>
+      </header>
+      <div class="description">
+        <p>Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen, где gen — функция-генератор вроде той, что была в первом задании. fmap возвращает новую функцию-генератор, которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a. Пример:</p>
+        <pre>var gen = sequence(1, 1);
+          function square(x) { return x * x; }
+          var squareGen = fmap(square, gen);
+
+          console.log(squareGen()); // 1
+          console.log(squareGen()); // 4
+          console.log(squareGen()); // 9
+          console.log(squareGen()); // 16</pre>
+          <p>При этом, необходимо сделать так, чтобы в качестве gen можно было указать функцию с аргументами, и при вызове</p>
+          <pre>function add(a, b) { 
+            return a + b; 
+          }
+
+          // Мы получаем новую функцию, которая вызвает add, и результат пропускает через функцию square
+          var squareAdd = fmap(square, add);
+          console.log(squareAdd(2, 3)); // 25 = (2 + 3) ^ 2
+          console.log(squareAdd(5, 7)); // 144 = (5 + 7) ^ 2</pre>
+          <p>Эти аргументы бы передавались функции gen. Аргументов может быть любое количество.</p>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_4">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_4" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_4"></div>
+    </div>
+  </section></div>
+</body>
+</html>

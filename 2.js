@@ -1,20 +1,20 @@
-describe("Function 'take'", function() { 
+describe("Функция take(gen, n)", function() { 
 	var callCount, spy; 
 	beforeEach(function() {
 		callCount = 5;
 		spy = jasmine.createSpy(function() { });
 	});
 
-	it("should return an array", function() {
+	it("должна возвращать массив", function() {
 		var res = take(function() { }, callCount);
 		expect(res).toBeOfType("Array");
 	});
-	it("should call function passed as first arg number of times passed as 2nd arg", function() {
+	it("должна вызывать функцию gen n раз", function() {
 		take(spy, callCount);
 		expect(spy.calls.count()).toEqual(callCount);
 	});
-	describe("the array", function() {
-		it("should contain sequence of results returned by the function", function() { 
+	describe("Возвращаемый массив", function() {
+		it("должен содержать последовательность результатов вызовов функции gen", function() { 
 			var rand = Math.random();
 			var arr = [];
 			for (var i = 0; i< callCount; i++) {

@@ -28,14 +28,10 @@ jasmineRequire.HtmlReporter = function(j$) {
       getContainer().appendChild(htmlReporterMain);
     };
 
-
-
     var totalSpecsDefined;
     this.jasmineStarted = function(options) {
       clearPrior();
-      //var results = createDom('div', {className: "suite-results"});
       var results = createDom('div', {className: "suite results"});
-      //htmlReporterMain = getContainer().querySelector('.my_html-reporter');
       htmlReporterMain.appendChild(results);
       totalSpecsDefined = options.totalSpecsDefined || 0;
       timer.start();
@@ -76,22 +72,15 @@ jasmineRequire.HtmlReporter = function(j$) {
     };
 
     this.jasmineDone = function() {
-
-      // summaryList(topResults, summary);
-      //window.success = topResults.
-      //console.log(topResults);
-     // console.log(failureCount);
-
      if (!failureCount) {
       var feedback = createDom('div', {className: 'status correct'}, 'Правильно!');
      } else {
-      var feedback = createDom('div', {className: 'status wrong'}, 'Не правильно');
+      var feedback = createDom('div', {className: 'status wrong'}, 'Неправильно.');
      }
      getContainer().appendChild(feedback);
 
       window.failureCount = failureCount;
       var results = find('.suite.results');
-      //summaryList(topResults, results);
       mySummaryList(topResults, results);
       function mySummaryList(resultsTree, domParent) {
         var specListNode;
@@ -144,7 +133,6 @@ jasmineRequire.HtmlReporter = function(j$) {
      window.tree = null;
     }
 
-
     function createDom(type, attrs, childrenVarArgs) {
       var el = createElement(type);
 
@@ -175,8 +163,6 @@ jasmineRequire.HtmlReporter = function(j$) {
 
   return HtmlReporter;
 };
-
-
 
 jasmineRequire.ResultsNode = function() {
   function ResultsNode(result, type, parent) {

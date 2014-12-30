@@ -74,17 +74,17 @@
 		});
 	});
 
-	function runSuite(form, n) {
-			var scriptFile = n + ".js";
-	var xhrObj = new XMLHttpRequest();
-	xhrObj.open('GET', scriptFile, false);
-	xhrObj.send(null);
-	globalEval(xhrObj.responseText);
-	htmlReporter.initialize();
-	env.execute();
-	displayResults(form, n);
-    window.addEventListener('beforeunload', saveLastResults);
-	}
+function runSuite(form, n) {
+ var scriptFile = n + ".js";
+ var xhrObj = new XMLHttpRequest();
+ xhrObj.open('GET', scriptFile, false);
+ xhrObj.send(null);
+ globalEval(xhrObj.responseText);
+ htmlReporter.initialize();
+ env.execute();
+ displayResults(form, n);
+ window.addEventListener('beforeunload', saveLastResults);
+}
 
 function saveLastResults() {
   var container = document.getElementById("feedback_"+currentSpec);

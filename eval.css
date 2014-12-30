@@ -162,6 +162,7 @@ padding: 0;
 	padding: 0 20px;
 	margin: 10px 0;
 	border-radius: 3px;
+	font-weight: bold;
 }
 .status.wrong {
 	background: #f9f2f4;
@@ -174,9 +175,7 @@ padding: 0;
 	background: #dff0d8;
 	color: #3c763d;
 }
-/*li.suite.passed {
-	background: #dff0d8;
-}*/
+
 button {
 	background: #fff;
 	outline: none;
@@ -188,4 +187,29 @@ button {
 }
 button:hover, button:active {
 	background: #e6e6e6; 
+}
+li.suite {
+	padding-top: 5px;
+}
+
+nav ul li a {
+	padding: 7px 14px;
+	display: inline-block;
+}
+nav ul li:hover {
+	background: rgb(234, 239, 242);
+}
+nav ul li:hover a {
+	text-decoration: none;
+}
+
+li.spec.failed span:after {
+	content: "(x)";
+	float: right;
+	margin-right: 5px;
+}
+li.spec.passed span:after {
+	content: "(ок)";
+	float: right;
+	margin-right: 5px;
 }

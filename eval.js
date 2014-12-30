@@ -103,8 +103,11 @@ function showStoredResults(currentSpec) {
 
   div.innerHTML = html;
 
-  var pre = document.createElement('pre');
-  pre.appendChild(document.createTextNode(code));
+  var pre = document.createElement('pre'),
+      codeTag = document.createElement('code');
+  codeTag.appendChild(document.createTextNode(code));
+  pre.appendChild(codeTag);
+
   div.insertBefore(pre, div.firstChild);
 
   var time = document.createElement('div');

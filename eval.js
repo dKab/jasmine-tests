@@ -41,7 +41,7 @@
 	var solvedCount = (localStorage.getItem('solvedCount') === null) ?
 	 0 : 
 	 localStorage.getItem('solvedCount'),
-	 percent = solvedCount / tasksTotal * 100,
+	 percent = Math.floor(solvedCount / tasksTotal * 100),
 	 className = determineColor(percent);
 
 	var tasks = document.querySelectorAll('.task'), span;
@@ -197,7 +197,7 @@ function displayStep(urlParams) {
   				solvedCount = 1;
   				localStorage.setItem('solvedCount', solvedCount);
   			}
-  			var percent = solvedCount / tasksTotal * 100,
+  			var percent = Math.floor(solvedCount / tasksTotal * 100),
   			className = determineColor(percent),
   			tasks = document.getElementsByClassName('task'),
   			span;

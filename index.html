@@ -120,6 +120,61 @@
       </form>
       <div class="feedback" id="feedback_4"></div>
     </div>
+    <div class="task " id="task_5">
+      <header><h2><span>Шаг 5</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p><h3>Частичное применение (partial application)</h3>
+
+          <p>вики: <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">https://ru.wikipedia.org/wiki/Частичное_применение</a></p>
+
+          <p>Напиши функцию <pre><code>partial(fn, a1, a2, ....)</code></pre>, которая позволяет зафиксировать один или несколько аргументов функции. Пример: </p>
+          <pre><code>function add(a, b) { return a + b; }
+            function mult(a, b, c, d) { return a * b * c * d; }
+
+            var add5 = partial(add, 5); // Мы получили функцию с 1 аргументом, которая прибавляет к любому числу 5
+
+            console.log(add5(2)); // 7
+            console.log(add5(10)); // 15
+            console.log(add5(8)); // 13
+
+            var mult23 = partial(mult, 2, 3); // мы зафиксировали первые 2 аргумента mult() как 2 и 3
+
+            console.log(mult23(4, 5)); // 2*3*4*5 = 120
+            console.log(mult23(1, 1)); // 2*3*1*1 = 6</code></pre>
+            <p>Есть функция с аргументами:
+            <pre><code>f1(a, d, c, d)</code></pre>
+            Мы можем с помощью partial сделать из нее функцию с меньшим числом аргументов, заранее задав значения для нескольких из них, например:
+            <pre><code>var f2 = partial(f1, 1, 2); // фиксируем a = 1, b = 2</code></pre>
+            И вызов:
+            <pre><code>f2(x, y)</code></pre>
+            будет равносилен вызову:
+            <pre><code>f1(1, 2, x, y)</code></pre>
+            Кстати, имеющийся в новых версиях JS метод bind() тоже может делать частичное применение: <a href="http://frontender.info/partial-application-in-javascript-using-bind/">http://frontender.info/partial-application-in-javascript-using-bind/</a> Но ты должен обойтись без его использования, и написать свой велосипед.</p>
+          </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_1">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_1" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_1"></div>
+    </div>
+     <div class="task " id="task_6">
+      <header>
+        <h2><span>Шаг 6</span></h2><div class="percentage">Процент решенных задач: <span></span></div>
+      </header>
+      <div class="description">
+        <p>Наша функция partial позволяет фиксировать только первые аргументы. Усовершенствуй ее, чтобы зафиксировать можно было любые аргументы, пропущенные аргументы обозначаются с помощью undefined:</p>
+        <pre><code>function test(a, b, c) { return 'a=' + a + ',b=' + b + ',c=' + c; }
+          var test1_3 = partial(test, 1, undefined, 3);
+          console.log(test1_3(5)); // a=1,b=5,c=3<pre><code>
+        </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_4">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_4" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_4"></div>
+    </div>
   </section></div>
 </body>
 </html>

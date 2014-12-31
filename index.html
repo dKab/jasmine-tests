@@ -33,8 +33,7 @@
       <header><h2><span>Шаг 1</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
       <div class="description">
         <p>Напиши функцию создания генератора sequence(start, step). Она при вызове возвращает другую функцию-генератор, которая при каждом вызове дает число на 1 больше, и так до бесконечности. Начальное число, с которого начинать отсчет, и шаг, задается при создании генератора. Шаг можно не указывать, тогда он будет равен одному. Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.</p>
-        <pre><code>
-          var generator = sequence(10, 3);
+        <pre><code>var generator = sequence(10, 3);
           var generator2 = sequence(7, 1);
 
           console.log(generator()); // 10
@@ -57,8 +56,7 @@
       <header><h2><span>Шаг 2</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
       <div class="description">
         <p>Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов. Она нам пригодится для отладки:</p>
-        <pre><code>
-          var gen2 = sequence(0, 2);
+        <pre><code>var gen2 = sequence(0, 2);
           console.log(take(gen2, 5)); // [0, 2, 4, 6, 8 ]</code></pre>
       </div>
       <form action="" onsubmit="return false;">
@@ -72,15 +70,13 @@
       <header><h2><span>Шаг 3</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
       <div class="description">
         <p>Напиши функцию map(fn, array), которая принимает на вход функцию и массив, и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:</p>
-        <pre><code>
-          function square(x) { return x * x; } // возведение в квадрат
+        <pre><code>function square(x) { return x * x; } // возведение в квадрат
           console.log(map(square, [1, 2, 3, 4])); // [1, 4, 9, 16]
           console.log(map(square, [])); // []</code></pre>
         <p>Обрати внимание: функция не должна изменять переданный ей массив:</p>
         <pre><code>var arr = [1, 2, 3];
           console.log(map(square, arr)); // [1, 4, 9]
-          console.log(arr); // [1, 2, 3]
-        </code></pre>
+          console.log(arr); // [1, 2, 3]</code></pre>
         <p>Это аналог array_map из PHP.</p>
       </div>
       <form action=""  onsubmit="return false;">
@@ -129,7 +125,7 @@
 
           <p>вики: <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">https://ru.wikipedia.org/wiki/Частичное_применение</a></p>
 
-          <p>Напиши функцию <pre><code>partial(fn, a1, a2, ....)</code></pre>, которая позволяет зафиксировать один или несколько аргументов функции. Пример: </p>
+          <p>Напиши функцию partial(fn, a1, a2, ....), которая позволяет зафиксировать один или несколько аргументов функции. Пример: </p>
           <pre><code>function add(a, b) { return a + b; }
             function mult(a, b, c, d) { return a * b * c * d; }
 
@@ -143,14 +139,10 @@
 
             console.log(mult23(4, 5)); // 2*3*4*5 = 120
             console.log(mult23(1, 1)); // 2*3*1*1 = 6</code></pre>
-            <p>Есть функция с аргументами:
-            <pre><code>f1(a, d, c, d)</code></pre>
-            Мы можем с помощью partial сделать из нее функцию с меньшим числом аргументов, заранее задав значения для нескольких из них, например:
+            <p>Есть функция с аргументами: f1(a, d, c, d);<br>
+            Мы можем с помощью partial сделать из нее функцию с меньшим числом аргументов, заранее задав значения для нескольких из них, например:</p>
             <pre><code>var f2 = partial(f1, 1, 2); // фиксируем a = 1, b = 2</code></pre>
-            И вызов:
-            <pre><code>f2(x, y)</code></pre>
-            будет равносилен вызову:
-            <pre><code>f1(1, 2, x, y)</code></pre>
+            <p>И вызов: f2(x, y) будет равносилен вызову f1(1, 2, x, y);<br>
             Кстати, имеющийся в новых версиях JS метод bind() тоже может делать частичное применение: <a href="http://frontender.info/partial-application-in-javascript-using-bind/">http://frontender.info/partial-application-in-javascript-using-bind/</a> Но ты должен обойтись без его использования, и написать свой велосипед.</p>
           </div>
       <form action="" onsubmit="return false;">
@@ -168,7 +160,7 @@
         <p>Наша функция partial позволяет фиксировать только первые аргументы. Усовершенствуй ее, чтобы зафиксировать можно было любые аргументы, пропущенные аргументы обозначаются с помощью undefined:</p>
         <pre><code>function test(a, b, c) { return 'a=' + a + ',b=' + b + ',c=' + c; }
           var test1_3 = partial(test, 1, undefined, 3);
-          console.log(test1_3(5)); // a=1,b=5,c=3<pre><code>
+          console.log(test1_3(5)); // a=1,b=5,c=3</code></pre>
         </div>
       <form action="" onsubmit="return false;">
         <div class="form-row"><label for="code_to_verify_4">Вcтавьте ваш код сюда:</label></div>

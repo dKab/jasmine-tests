@@ -13,7 +13,7 @@
 	}
 	var currentSpec = urlParams.spec || 1;
 	var lastSubmit;
-	window.tasksTotal = 4;
+	window.tasksTotal = 6;
 
 	var htmlReporter = new jasmine.HtmlReporter({
     env: env,

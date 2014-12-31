@@ -18,6 +18,7 @@ describe("Function map(fn, array)", function() {
 	});
 	
 	it("should return an array", function() {
+		expect(res).toEqual(jasmine.any(Array));
 		expect(res).toBeOfType("Array");
 	});
 	it("should apply function passed as 1st arg to each element of array passed as 2nd arg", function() {	

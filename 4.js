@@ -15,6 +15,7 @@ describe("function fmap(mixin, fn)", function() {
 
 	it("should return new function", function() {
 	    expect(bar).toBeOfType("Function");
+		expect(bar).toEqual(jasmine.any(Function));
 	});
 
 	describe("the returned function", function() {

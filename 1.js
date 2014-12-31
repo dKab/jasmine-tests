@@ -4,6 +4,7 @@ describe("Generator", function() {
 	var generator  = sequence(startingValue, step);
 	it("should return another function", function() {
 		expect(generator).toBeOfType("Function");
+		expect(generator).toEqual(jasmine.any(Function));
 	});
 
 	describe("that function", function () {

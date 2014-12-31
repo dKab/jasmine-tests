@@ -8,6 +8,7 @@ describe("Function 'take'", function() {
 	it("should return an array", function() {
 		var res = take(function() { }, callCount);
 		expect(res).toBeOfType("Array");
+		expect(res).toEqual(jasmine.any(Array));
 	});
 	it("should call function passed as first arg number of times passed as 2nd arg", function() {
 		take(spy, callCount);

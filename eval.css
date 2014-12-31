@@ -16,7 +16,7 @@ a, a:visited {
 }
 pre {
 	color: rgb(89, 89, 89);
-	background: #eee;
+    background: #f0f0f0;
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	padding: 20px;
@@ -212,4 +212,7 @@ li.spec.passed span:after {
 	content: "(ок)";
 	float: right;
 	margin-right: 5px;
+}
+.stored-feedback pre , .stored-feedback code{
+	background: #fff;
 }

@@ -17,7 +17,7 @@
 <body>
 
 <div class="container">
-  <h1>Упражнения JavaScript</h1>
+  <h1>Упражнения по JavaScript</h1>
   <nav>
     <ul>
       <li><a href="?spec=1">1</a></li>
@@ -26,6 +26,7 @@
       <li><a href="?spec=4">4</a></li>
       <li><a href="?spec=5">5</a></li>
       <li><a href="?spec=6">6</a></li>
+       <li><a href="?spec=7">7</a></li>
     </ul>
   </nav>
   <section id="tasks">
@@ -169,6 +170,28 @@
         <div class="form-row"><button class="verify">Проверить</button></div>
       </form>
       <div class="feedback" id="feedback_6"></div>
+    </div>
+    <div class="task " id="task_7">
+      <header><h2><span>Шаг 7</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию bind, которая позволяет привязать контекст (значение this) к функции:</p>
+        <pre><code>window.x = 1;
+var ctx = { x: 2 };
+
+function testThis(a) { console.log("x=" + this.x + ", a=" + a); }
+console.log(testThis(100)); // x=1, a=100
+var boundFunction = bind(testThis, ctx);
+console.log(boundFunction(100)); // x=2, a= 100</code></pre>
+<p>В новых браузерах и функций есть метод bind(), делающий аналогичную вещь: <br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" rel="noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind</a><br>
+В библиотеках тоже есть такой метод: <a href="http://lodash.com/docs#bind" rel="noreferrer">http://lodash.com/docs#bind</a>
+</p> </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_7">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_7" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_7"></div>
     </div>
   </section></div>
 </body>

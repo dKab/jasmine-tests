@@ -31,10 +31,11 @@ describe("Функция sequence(startingValue, step)", function() {
 		it("начальное значение должно быть равно 0 по умолчанию", function() {
 			expect(generator2()).toBe(0);
 		});
+
 		it("шаг должнен быть 1 по умолчанию", function() {
-			generator2();
-			expect(generator2()).toBe(1);
-			expect(generator2()).toBe(2);
+			var g = sequence(4);
+			expect(g()).toBe(4);
+			expect(g()).toBe(5);
 		});
 	});
 	it("можно создать любое количество независимых генераторов", function() {

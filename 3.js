@@ -1,4 +1,4 @@
-describe("Function map(fn, array)", function() {
+describe("Функция map(fn, array)", function() {
 	var curtime = new Date().getTime().toString(),
 		rand  = Math.random(),
 		orig, res, tmpObj, remember;
@@ -16,12 +16,11 @@ describe("Function map(fn, array)", function() {
 		spyOn(tmpObj, 'spy').and.callThrough();
 		res = map(tmpObj.spy, orig);
 	});
-	
-	it("should return an array", function() {
+	it("должна возвращать массив", function() {
+
 		expect(res).toEqual(jasmine.any(Array));
-		expect(res).toBeOfType("Array");
 	});
-	it("should apply function passed as 1st arg to each element of array passed as 2nd arg", function() {	
+	it("должна вызывать функцию fn для всех элементов массива array", function() {	
 		expect(tmpObj.spy.calls.count()).toEqual(orig.length);
 		expect(res.length).toEqual(orig.length);
 		for (var i = 0; i < res.length; i++) {
@@ -29,7 +28,7 @@ describe("Function map(fn, array)", function() {
 			expect(res[i][curtime]).toEqual(rand);
 		}
 	});
-	it("should not change original array", function() {
+	it("Не должна изменять переданный ей массив", function() {
 		expect(orig).toEqual(remember);
 	});
 });

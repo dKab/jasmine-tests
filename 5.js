@@ -1,4 +1,4 @@
-describe("Function partial(fn, foo, bar...)", function() {
+describe("Функция partial(fn, foo, bar...)", function() {
 		var doSmthg = function(a, b, c, d) {
 			return [a, b, c, d];
 		},
@@ -16,18 +16,18 @@ describe("Function partial(fn, foo, bar...)", function() {
 			partialSpy2();
 		});
 
-	it("should return another function", function() {
+	it("должна возвращать другую функцию", function() {
 		expect(newFn).toBeOfType("Function");
 		expect(newFn).toEqual(jasmine.any(Function));
 	});
-	it("should bind its arguments to first params of returned function", function() {
+	it("должна привязывать переданные ей аргументы к первым параметрам функции fn", function() {
 			expect(spy).toHaveBeenCalled();
 			expect(spy.calls.argsFor(0)).toEqual(["baz", "qux"]);
 			expect(spy.calls.argsFor(1)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
 		});
-	describe("the returned function", function() {
+	describe("Возвращаемая функция", function() {
 
-		it("should return results of calling fn with foo as first arg, bar as second arg, etc.", function() {
+		it("должна возвращать результаты вызова функции fn с аргументами foo, bar...", function() {
 			expect(newFn('c', 'd')).toEqual(['a', 'b', 'c', 'd']);
 			expect(mult_10_2(0.1, 0.5)).toEqual(1);
 			expect(add_15(-15)).toBe(0);

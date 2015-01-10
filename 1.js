@@ -32,9 +32,9 @@ describe("Generator", function() {
 			expect(generator2()).toBe(0);
 		});
 		it("step value should be 1 by default", function() {
-			generator2();
-			expect(generator2()).toBe(1);
-			expect(generator2()).toBe(2);
+			var g = sequence(4);
+			expect(g()).toBe(4);
+			expect(g()).toBe(5);
 		});
 	});
 	it("should be able to create any number of independent generators", function() {

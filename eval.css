@@ -1,0 +1,218 @@
+.container {
+	width: 960px;
+	padding: 5px 10px 20px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+h1 {
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: lighter;
+	/*color: rgb(51, 51, 51);*/
+}
+a, a:visited {
+	color: rgb(0, 149, 221);
+}
+pre {
+	color: rgb(89, 89, 89);
+    background: #f0f0f0;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	padding: 20px;
+}
+body {
+	margin: 0;
+	color: rgb(51, 51, 51);
+	font-family: Open Sans, sans-serif;
+
+}
+body, html {
+	min-height: 100%;
+}
+nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+nav ul li {
+	display: inline-block;
+}
+form .form-row {
+	margin: 10px 0;
+}
+form textarea { 
+	min-width: 200px;
+	display: inline-block;
+}
+.suite-results li span {
+	display: inline-block;
+	margin-right: 15px;
+}
+button {
+	display: inline-block;
+	margin-right: 15px;
+}
+.suite.failed {
+	border: 1px solid #ebccd1;
+	background: #fff;
+}
+
+.suite.passed {
+	border: 1px solid #d6e9c6;
+	background: #fff;
+}
+.spec.failed { 
+	color: #c7254e;
+}
+.spec.passed {
+	color: #468847;
+}
+.results {
+	padding-left: 0;
+}
+.solved:after {
+	content: " (Решено)";
+	color: #468847;
+}
+header h2 {
+	float: left;
+}
+header .percentage {
+	float: right;
+	margin-top: 25px;
+}
+header {
+	overflow: hidden;
+}
+
+.orange {
+	color: orange;
+	/* #FF9933 */
+}
+.green { 
+	color: #468847;
+}
+.red {
+	color: #c7254e;
+}
+.yellow {
+	color: #B8E62E;
+}
+
+.stored-feedback {
+	display: none;
+}
+ul {
+	list-style: none;
+}
+.tabs li {
+	display: inline-block;
+	background: rgba(234, 239, 242, 0.5);
+	margin-right: 5px;
+	padding: 8px;
+	font-size: smaller;
+	border-top: 2px solid rgba(234, 239, 242, 0.5);
+	color: rgb(0, 149, 221);
+	cursor: pointer;
+}
+.tabs li.selected  {
+	border-top: 2px solid rgba(212, 221, 228, 0.247059);
+	background: rgb(234, 239, 242);
+	opacity: 1;
+	color: rgb(51, 51, 51);
+	cursor: default;
+}
+.tabs li:hover {
+	text-decoration: underline;
+}
+.tabs li.selected:hover {
+	text-decoration: none;
+}
+.tabs {
+	padding-left: 0;
+	margin: 0;
+}
+form, .stored-feedback {
+	background: rgb(234, 239, 242); 
+	padding: 10px;
+}
+.time {
+	font-style: italic;
+	font-size: 13px;
+}
+.suite.results > ul {
+	padding: 10px;
+}
+.suite.results  ul li {
+	padding-left: 20px;
+	margin: 5px 0;
+}
+.suite.results ul ul {
+padding: 0;
+}
+.suite.results {
+	font-size: 14px;
+}
+.suite {
+	border-radius: 3px;
+}
+.status {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	margin: 10px 0;
+	border-radius: 3px;
+	font-weight: bold;
+}
+.status.wrong {
+	background: #f9f2f4;
+	color: #a94442;
+	border: 1px solid #ebccd1;
+
+}
+.status.correct {
+	border: 1px solid #d6e9c6;
+	background: #dff0d8;
+	color: #3c763d;
+}
+
+button {
+	background: #fff;
+	outline: none;
+	color: #333;
+	border: 1px solid #ccc;
+	height: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+button:hover, button:active {
+	background: #e6e6e6; 
+}
+li.suite {
+	padding-top: 5px;
+}
+
+nav ul li a {
+	padding: 7px 14px;
+	display: inline-block;
+}
+nav ul li:hover {
+	background: rgb(234, 239, 242);
+}
+nav ul li:hover a {
+	text-decoration: none;
+}
+
+li.spec.failed span:after {
+	content: "(x)";
+	float: right;
+	margin-right: 5px;
+}
+li.spec.passed span:after {
+	content: "(ок)";
+	float: right;
+	margin-right: 5px;
+}
+.stored-feedback pre , .stored-feedback code{
+	background: #fff;
+}

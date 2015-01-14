@@ -1,0 +1,198 @@
+<!DOCTYPE='html'>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Упражнения по JavaScript</title>
+  <link rel="stylesheet" href="eval.css">
+  <link rel="stylesheet" href="highlightjs/styles/default.css">
+  <script type="text/javascript" src="lib/jasmine-2.1.3/jasmine.js"></script>
+  <script type="text/javascript" src="myHtmlReporter.js"></script>
+  <script type="text/javascript" src="eval.js"></script>
+  <script type="text/javascript" src="SpecHelper.js"></script>
+  <script type="text/javascript" src="highlightjs/highlight.pack.js"></script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<div class="container">
+  <h1>Упражнения по JavaScript</h1>
+  <nav>
+    <ul>
+      <li><a href="?spec=1">1</a></li>
+      <li><a href="?spec=2">2</a></li>
+      <li><a href="?spec=3">3</a></li>
+      <li><a href="?spec=4">4</a></li>
+      <li><a href="?spec=5">5</a></li>
+      <li><a href="?spec=6">6</a></li>
+       <li><a href="?spec=7">7</a></li>
+    </ul>
+  </nav>
+  <section id="tasks">
+    <div class="task " id="task_1">
+      <header><h2><span>Шаг 1</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию создания генератора sequence(start, step). Она при вызове возвращает другую функцию-генератор, которая при каждом вызове дает число на 1 больше, и так до бесконечности. Начальное число, с которого начинать отсчет, и шаг, задается при создании генератора. Шаг можно не указывать, тогда он будет равен одному. Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.</p>
+        <pre><code>var generator = sequence(10, 3);
+          var generator2 = sequence(7, 1);
+
+          console.log(generator()); // 10
+          console.log(generator()); // 13
+
+          console.log(generator2()); // 7
+
+          console.log(generator()); // 16
+
+          console.log(generator2()); // 8</code></pre>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_1">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_1" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_1"></div>
+    </div>
+    <div class="task " id="task_2">
+      <header><h2><span>Шаг 2</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов. Она нам пригодится для отладки:</p>
+        <pre><code>var gen2 = sequence(0, 2);
+          console.log(take(gen2, 5)); // [0, 2, 4, 6, 8 ]</code></pre>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_2">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_2" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_2"></div>
+    </div>
+    <div class="task " id="task_3">
+      <header><h2><span>Шаг 3</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию map(fn, array), которая принимает на вход функцию и массив, и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:</p>
+        <pre><code>function square(x) { return x * x; } // возведение в квадрат
+          console.log(map(square, [1, 2, 3, 4])); // [1, 4, 9, 16]
+          console.log(map(square, [])); // []</code></pre>
+        <p>Обрати внимание: функция не должна изменять переданный ей массив:</p>
+        <pre><code>var arr = [1, 2, 3];
+          console.log(map(square, arr)); // [1, 4, 9]
+          console.log(arr); // [1, 2, 3]</code></pre>
+        <p>Это аналог array_map из PHP.</p>
+      </div>
+      <form action=""  onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_3">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_3" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_3"></div>
+    </div>
+    <div class="task " id="task_4">
+      <header>
+        <h2><span>Шаг 4</span></h2><div class="percentage">Процент решенных задач: <span></span></div>
+      </header>
+      <div class="description">
+        <p>Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen, где gen — функция-генератор вроде той, что была в первом задании. fmap возвращает новую функцию-генератор, которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a. Пример:</p>
+        <pre><code>var gen = sequence(1, 1);
+          function square(x) { return x * x; }
+          var squareGen = fmap(square, gen);
+
+          console.log(squareGen()); // 1
+          console.log(squareGen()); // 4
+          console.log(squareGen()); // 9
+          console.log(squareGen()); // 16</code></pre>
+          <p>При этом, необходимо сделать так, чтобы в качестве gen можно было указать функцию с аргументами, и при вызове</p>
+          <pre><code>function add(a, b) { 
+            return a + b; 
+          }
+
+          // Мы получаем новую функцию, которая вызвает add, и результат пропускает через функцию square
+          var squareAdd = fmap(square, add);
+          console.log(squareAdd(2, 3)); // 25 = (2 + 3) ^ 2
+          console.log(squareAdd(5, 7)); // 144 = (5 + 7) ^ 2</code></pre>
+          <p>Эти аргументы бы передавались функции gen. Аргументов может быть любое количество.</p>
+      </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_4">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_4" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_4"></div>
+    </div>
+    <div class="task " id="task_5">
+      <header><h2><span>Шаг 5</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p><h3>Частичное применение (partial application)</h3>
+
+          <p>вики: <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">https://ru.wikipedia.org/wiki/Частичное_применение</a></p>
+
+          <p>Напиши функцию partial(fn, a1, a2, ....), которая позволяет зафиксировать один или несколько аргументов функции. Пример: </p>
+          <pre><code>function add(a, b) { return a + b; }
+            function mult(a, b, c, d) { return a * b * c * d; }
+
+            var add5 = partial(add, 5); // Мы получили функцию с 1 аргументом, которая прибавляет к любому числу 5
+
+            console.log(add5(2)); // 7
+            console.log(add5(10)); // 15
+            console.log(add5(8)); // 13
+
+            var mult23 = partial(mult, 2, 3); // мы зафиксировали первые 2 аргумента mult() как 2 и 3
+
+            console.log(mult23(4, 5)); // 2*3*4*5 = 120
+            console.log(mult23(1, 1)); // 2*3*1*1 = 6</code></pre>
+            <p>Есть функция с аргументами: f1(a, d, c, d);<br>
+            Мы можем с помощью partial сделать из нее функцию с меньшим числом аргументов, заранее задав значения для нескольких из них, например:</p>
+            <pre><code>var f2 = partial(f1, 1, 2); // фиксируем a = 1, b = 2</code></pre>
+            <p>И вызов: f2(x, y) будет равносилен вызову f1(1, 2, x, y);<br>
+            Кстати, имеющийся в новых версиях JS метод bind() тоже может делать частичное применение: <a href="http://frontender.info/partial-application-in-javascript-using-bind/">http://frontender.info/partial-application-in-javascript-using-bind/</a> Но ты должен обойтись без его использования, и написать свой велосипед.</p>
+          </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_5">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_5" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_5"></div>
+    </div>
+     <div class="task " id="task_6">
+      <header>
+        <h2><span>Шаг 6</span></h2><div class="percentage">Процент решенных задач: <span></span></div>
+      </header>
+      <div class="description">
+        <p>Наша функция partial позволяет фиксировать только первые аргументы. Усовершенствуй ее, чтобы зафиксировать можно было любые аргументы, пропущенные аргументы обозначаются с помощью undefined:</p>
+        <pre><code>function test(a, b, c) { return 'a=' + a + ',b=' + b + ',c=' + c; }
+          var test1_3 = partialAny(test, 1, undefined, 3);
+          console.log(test1_3(5)); // a=1,b=5,c=3</code></pre>
+        <p>Чтобы избежать путаницы, пусть новая функция называется partialAny</p>
+        </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_6">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_6" cols="70" rows="15">function partialAny</textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_6"></div>
+    </div>
+    <div class="task " id="task_7">
+      <header><h2><span>Шаг 7</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию bind, которая позволяет привязать контекст (значение this) к функции:</p>
+        <pre><code>window.x = 1;
+var ctx = { x: 2 };
+
+function testThis(a) { console.log("x=" + this.x + ", a=" + a); }
+console.log(testThis(100)); // x=1, a=100
+var boundFunction = bind(testThis, ctx);
+console.log(boundFunction(100)); // x=2, a= 100</code></pre>
+<p>В новых браузерах и функций есть метод bind(), делающий аналогичную вещь: <br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" rel="noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind</a><br>
+В библиотеках тоже есть такой метод: <a href="http://lodash.com/docs#bind" rel="noreferrer">http://lodash.com/docs#bind</a>
+</p> </div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_7">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_7" cols="70" rows="15"></textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_7"></div>
+    </div>
+  </section></div>
+</body>
+</html>

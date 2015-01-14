@@ -1,7 +1,7 @@
 describe("Функция map(fn, array)", function() {
 	var curtime = new Date().getTime().toString(),
 		rand  = Math.random(),
-		orig, res, tmpObj, remember;
+		orig, res, tmpObj;
 	var mutate = function(obj) {
 		obj[curtime] = rand;
 		return obj;
@@ -16,7 +16,6 @@ describe("Функция map(fn, array)", function() {
 			spy: mutate
 		};
 		orig = [{}, {}, {}, {}];
-		remember = orig.slice(0);
 		spyOn(tmpObj, 'spy').and.callThrough();
 		res = map(tmpObj.spy, orig);
 	});

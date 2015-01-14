@@ -42,6 +42,12 @@ describe('Функция pluck(arr, fieldName)', function() {
 		expect(res).toEqual(jasmine.any(Array));
 	});
 
+	it('Не должна изменять исходный массив', function() {
+		var sourceCopy = orig.slice();			
+		var result = pluck(orig, 'name');
+		expect(orig).toEqual(sourceCopy);
+	});
+
 	describe('Этот массив', function() {
 			it('должен содержать значения определенного поля объектов переданного массива', function() {
 				var ages = pluck(orig, 'age');

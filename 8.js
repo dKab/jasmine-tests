@@ -48,7 +48,7 @@ describe('Функция pluck(arr, fieldName)', function() {
 		expect(orig).toEqual(sourceCopy);
 	});
 
-	describe('Этот массив', function() {
+	describe('Возвращаемый массив', function() {
 			it('должен содержать значения определенного поля объектов переданного массива', function() {
 				var ages = pluck(orig, 'age');
 				var occupations = pluck(orig, 'occupation');

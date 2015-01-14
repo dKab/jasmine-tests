@@ -16,10 +16,9 @@ describe("Функция map(fn, array)", function() {
 		spyOn(tmpObj, 'spy').and.callThrough();
 		res = map(tmpObj.spy, orig);
 	});
-	
 	it("должна возвращать массив", function() {
+
 		expect(res).toEqual(jasmine.any(Array));
-		expect(res).toBeOfType("Array");
 	});
 	it("должна вызывать функцию fn для всех элементов массива array", function() {	
 		expect(tmpObj.spy.calls.count()).toEqual(orig.length);

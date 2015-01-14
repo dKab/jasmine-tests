@@ -31,6 +31,7 @@ describe("Функция sequence(startingValue, step)", function() {
 		it("начальное значение должно быть равно 0 по умолчанию", function() {
 			expect(generator2()).toBe(0);
 		});
+
 		it("шаг должнен быть 1 по умолчанию", function() {
 			var g = sequence(4);
 			expect(g()).toBe(4);

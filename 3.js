@@ -7,6 +7,10 @@ describe("Функция map(fn, array)", function() {
 		return obj;
 	};
 
+	function processValue(x) {
+		return x * 3;
+	}
+
 	beforeEach(function() {
 		tmpObj  = {
 			spy: mutate
@@ -19,7 +23,8 @@ describe("Функция map(fn, array)", function() {
 	it("должна возвращать массив", function() {
 
 		expect(res).toEqual(jasmine.any(Array));
-	});
+	});	
+
 	it("должна вызывать функцию fn для всех элементов массива array", function() {	
 		expect(tmpObj.spy.calls.count()).toEqual(orig.length);
 		expect(res.length).toEqual(orig.length);
@@ -28,7 +33,17 @@ describe("Функция map(fn, array)", function() {
 			expect(res[i][curtime]).toEqual(rand);
 		}
 	});
-	it("Не должна изменять переданный ей массив", function() {
-		expect(orig).toEqual(remember);
+
+	it("должна возвращать массив, содержащий обработанные функцией значения", function () {
+		var source = [1, 2, 3];
+		var result = map(processValue, source);
+		expect(result).toEqual([3, 6, 9]);
+	});
+
+	it("не должна изменять переданный ей массив", function() {		
+		var source = [1, 2, 3], 
+			sourceCopy = source.slice();			
+		var result = map(processValue, source);
+		expect(source).toEqual(sourceCopy);
 	});
 });

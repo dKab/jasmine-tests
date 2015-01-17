@@ -39,8 +39,8 @@ describe("Функция sequence(startingValue, step)", function() {
 		});
 	});
 	it("можно создать любое количество независимых генераторов", function() {
-		var generator = sequence();
-		var generator2 = sequence();
+		var generator = sequence(1, 5);
+		var generator2 = sequence(1, 5);
 		expect(generator).toBeTruthy();
 		expect(generator2).toBeTruthy();
 		expect(generator).not.toBe(generator2);

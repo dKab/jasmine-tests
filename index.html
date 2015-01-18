@@ -28,6 +28,7 @@
       <li><a href="?spec=6">6</a></li>
        <li><a href="?spec=7">7</a></li>
        <li><a href="?spec=8">8</a></li>
+       <li><a href="?spec=9">9</a></li>
     </ul>
   </nav>
   <section id="tasks">
@@ -215,6 +216,27 @@ console.log(pluck(characters, 'name')); // ['barney', 'fred']</code></pre>
         <div class="form-row"><button class="verify">Проверить</button></div>
       </form>
       <div class="feedback" id="feedback_8"></div>
+    </div>
+    <div class="task " id="task_9">
+      <header><h2><span>Шаг 9</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>напиши функцию filter, которая принимает функцию-предикат и массив. Возвращает она массив значений, для которых предикат вернет true.</p>
+        <pre><code>var input = [1, 2, 3, 4, 5, 6];
+function isEven(x) { return x % 2 == 0; } // проверяет на четность
+console.log(filter(input, isEven)); // [2, 4, 6]</code></pre>
+<p>Функция не должна изменять исходный массив:</p> 
+<pre><code>console.log(input); // [1, 2, 3, 4, 5, 6]</code></pre>
+<p>Аналог из lodash: <a href="http://lodash.com/docs#filter">http://lodash.com/docs#filter</a> В новых браузерах у массивов есть метод filter.</p>
+</div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_9">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_9" cols="70" rows="15">function pluck(objects, fieldName) {
+          //здесь ваш код
+        }
+         </textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_9"></div>
     </div>
   </section></div>
 </body>

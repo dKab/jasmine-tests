@@ -1,8 +1,7 @@
 .container {
 	width: 960px;
-	padding: 5px 10px 20px;
 	margin: 0 auto;
-	min-height: 100%;
+	/*min-height: 100%;*/
 }
 h1 {
 	text-align: center;
@@ -21,14 +20,30 @@ pre {
 	border: 1px solid #ddd;
 	padding: 20px;
 }
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
-	margin: 0;
+	margin: 0 0 75px;
 	color: rgb(51, 51, 51);
 	font-family: Open Sans, sans-serif;
-
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 15px 0;
+	height: 45px;
+	text-align: center;
+	font-size: smaller;
+	width: 100%;
+}
+footer a:hover {
+	text-decoration: none;
 }
 body, html {
-	min-height: 100%;
+	/*min-height: 100%;*/
 }
 nav ul {
 	list-style: none;
@@ -41,6 +56,8 @@ form .form-row {
 	margin: 10px 0;
 }
 form textarea { 
+	max-width: 100%;
+	width: 100%;
 	min-width: 200px;
 	display: inline-block;
 }

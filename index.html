@@ -15,9 +15,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-
 <div class="container">
-  <h1>Упражнения по JavaScript</h1>
+<header><h1>Упражнения по JavaScript</h1>
   <nav>
     <ul>
       <li><a href="?spec=1">1</a></li>
@@ -26,11 +25,12 @@
       <li><a href="?spec=4">4</a></li>
       <li><a href="?spec=5">5</a></li>
       <li><a href="?spec=6">6</a></li>
-       <li><a href="?spec=7">7</a></li>
-       <li><a href="?spec=8">8</a></li>
-       <li><a href="?spec=9">9</a></li>
+      <li><a href="?spec=7">7</a></li>
+      <li><a href="?spec=8">8</a></li>
+      <li><a href="?spec=9">9</a></li>
+      <li><a href="?spec=10">10</a></li>
     </ul>
-  </nav>
+  </nav></header>
   <section id="tasks">
     <div class="task " id="task_1">
       <header><h2><span>Шаг 1</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
@@ -238,6 +238,35 @@ console.log(filter(input, isEven)); // [2, 4, 6]</code></pre>
       </form>
       <div class="feedback" id="feedback_9"></div>
     </div>
+    <div class="task " id="task_10">
+      <header><h2><span>Шаг 10</span></h2><div class="percentage">Процент решенных задач: <span></span></div></header>
+      <div class="description">
+        <p>Напиши функцию, считающую число свойств в объекте:</p>
+        <pre><code>var a = { a: 1, b: 2 };
+console.log(count(a)); // 2
+var b = function () {};
+console.log(count(b)); // 0
+var c = [1, 2, 3];
+console.log(count(c)); // 3
+var d = [];
+d[100] = 1;
+console.log(count(d)); // 1</code></pre>
+<p>Кстати, в новых браузерах с поддержкой Javascript ES5 есть метод Object.keys(x), возвращающий массив ключей у объекта.</p>
+</div>
+      <form action="" onsubmit="return false;">
+        <div class="form-row"><label for="code_to_verify_10">Вcтавьте ваш код сюда:</label></div>
+        <div class="form-row"><textarea name="" id="code_to_verify_10" cols="70" rows="15">function count (obj) {
+          // здесь ваш код
+        }
+         </textarea></div>
+        <div class="form-row"><button class="verify">Проверить</button></div>
+      </form>
+      <div class="feedback" id="feedback_10"></div>
+    </div>
   </section></div>
+  <footer>More tasks can be found <a href="https://gist.github.com/codedokode/ce30e7a036f18f416ae0">here</a>.<br>
+   Found an issue? Let us know via <a href="https://github.com/dKab/jasmine-tests/issues">issue tracker</a>.<br>
+   Feel free to send pull-requests if you want to contribute to the project: <a href="https://github.com/dKab/jasmine-tests">gitHub repo</a>.<br>
+ </footer>
 </body>
 </html>

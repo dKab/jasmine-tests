@@ -3,7 +3,6 @@
     "strict": false,
     "quotmark": false,
     "globals": {
-        "generator": false,
         "sequence": false,
         "take": false,
         "map": false,

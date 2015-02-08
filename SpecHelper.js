@@ -4,9 +4,12 @@ beforeEach(function () {
       return {
         compare: function (actual, expected) {
           return {
-          pass: util.equals(Object.prototype.toString.call(actual),  "[object " + expected + "]", customEqualityTesters)
-        
-          }
+          pass: util.equals(
+              Object.prototype.toString.call(actual),  
+              "[object " + expected + "]", 
+              customEqualityTesters
+            )        
+          };
         }
       };
     }

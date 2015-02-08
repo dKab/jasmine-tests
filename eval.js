@@ -242,6 +242,7 @@ function displayStep(urlParams) {
   }
 
   function determineColor(number) {
+    var className;
   	if (number < 25) {
   		className = 'red';
   	} else if (25 <= number && number < 50) {

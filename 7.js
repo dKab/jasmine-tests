@@ -4,7 +4,7 @@ describe("Функция bind(fn, context)", function() {
 	window.foo  = 'bar';
 	var checkContext = function() {
 		return this.foo;
-	}
+	};
 	beforeEach(function() {	
 		spy = jasmine.createSpy(checkContext);
 		binded = bind(checkContext, obj);

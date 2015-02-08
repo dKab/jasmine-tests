@@ -18,7 +18,7 @@ describe('Функция filter(arr, fn)', function() {
 		function falseFn() { 
 			return false; 
 		}
-		
+
 		expect(filter([], falseFn)).toEqual([]);
-	})
+	});
 });

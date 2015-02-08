@@ -4,7 +4,7 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 	function test2(a, b, c, d, e, f) {
 		return {a: a, b: b, c:c, d:d, e:e, f:f};
 	}
-	_test2 = partialAny(test2, undefined, 1, undefined, 2, undefined, 4);
+	var _test2 = partialAny(test2, undefined, 1, undefined, 2, undefined, 4);
 	it("должна испольльзовать строгое сравнение с undefined", function() {
 		var testNull = partialAny(test2, undefined, 1, null, 2, undefined, 4);
 		var res = testNull(5, 10, 15);

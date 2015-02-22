@@ -23,6 +23,7 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 	describe("Возвращаемая функция", function() {
 
 		var test5_10, _test2;
+
 		beforeEach(function () {
 			test5_10 = partialAny(test, 5, undefined, 10);
 			_test2 = partialAny(test2, undefined, 1, undefined, 2, undefined, 4);
@@ -36,6 +37,14 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 			expect(test5_10()).toEqual({a: 5, b: undefined, c: 10});
 		});
 
+		it("должна подставлять несколько аргументов в partialAny(fn, a, undefined, undefined, b)", function () {
+			expect(_test2(7, 3, 9)).toEqual({a: 7, b: 1, c: 3, d:2, e:9, f: 4});
+		});
+
+		it("должна подставлять undefined если аргумент не передан в partialAny(fn, a, undefined, undefined, b)", function () {
+			expect(_test2(7)).toEqual({a: 7, b: 1, c: undefined, d:2, e:undefined, f: 4});
+		});		
+
 		it("должна подставлять лишние аргументы в конец списка: partialAny(fn, 1)(2, 3) -> [1, 2, 3]", function () {
 			expect(partialAny(returnArgs, 1)(2, 3)).toEqual([1, 2, 3]);
 		});
@@ -43,15 +52,7 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 		it("может вызываться несколько раз и результаты во второй раз не зависят от первого", function () {
 			var fn = partialAny(returnArgs, undefined);
 			fn(1);
-			expect(fn())[0].toNotEqual(1);
-		});
-
-		it("должна подставлять несколько аргументов в partialAny(fn, a, undefined, undefined, b)", function () {
-			expect(_test2(7, 3, 9)).toEqual({a: 7, b: 1, c: 3, d:2, e:9, f: 4});
-		});
-
-		it("должна подставлять undefined если аргумент не передан в partialAny(fn, a, undefined, undefined, b)", function () {
-			expect(_test2(7)).toEqual({a: 7, b: 1, c: undefined, d:2, e:undefined, f: 4});
+			expect(fn())[0].toEqual(undefined);
 		});
 	});
 });

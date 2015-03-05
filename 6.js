@@ -52,7 +52,7 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 		it("может вызываться несколько раз и результаты во второй раз не зависят от первого", function () {
 			var fn = partialAny(returnArgs, undefined);
 			fn(1);
-			expect(fn())[0].toEqual(undefined);
+			expect(fn()[0]).toEqual(undefined);
 		});
 	});
 });

@@ -11,7 +11,7 @@ describe("Функция sequence(startingValue, step)", function() {
 		beforeEach(function() {
 			generator = sequence(startingValue, step);
 		});
-		it('при первом вызове должна возврщать начальное значение', function () {
+		it('при первом вызове должна возвращать начальное значение', function () {
 			expect(generator()).toEqual(startingValue);
 		});
 		it('при последующих вызовах должна возвращать значение, увеличенное на величину шага', function() {
@@ -21,6 +21,7 @@ describe("Функция sequence(startingValue, step)", function() {
 		});
 	});
 	describe("Её параметры", function () {
+		var generator2;
 		beforeEach(function() {
 			generator2 = sequence();
 		});

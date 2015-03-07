@@ -1,0 +1,19 @@
+{
+    "jasmine": true,
+    "strict": false,
+    "quotmark": false,
+    "globals": {
+        "sequence": false,
+        "take": false,
+        "map": false,
+        "fmap": false,
+        "partial": false,
+        "partialAny": false,
+        "bind": false,
+        "pluck": false,        
+        "filter": false,
+        "count": false,
+        "jasmineRequire": false,
+        "exports": false
+    }
+}

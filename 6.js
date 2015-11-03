@@ -49,6 +49,11 @@ describe("Функция partialAny(fn, foo, bar...)", function() {
 			expect(partialAny(returnArgs, 1)(2, 3)).toEqual([1, 2, 3]);
 		});
 
+        it("не должна передавать лишние аргументы внутренней функции: partialAny(fn, 1, undefined, 3, undefined)(2) -> [1, 2, 3, undefined]", function () {
+            var result = partialAny(returnArgs, 1, undefined, 3, undefined)(2)
+            expect(result).toEqual([1, 2, 3, undefined]);
+        });
+
 		it("может вызываться несколько раз и результаты во второй раз не зависят от первого", function () {
 			var fn = partialAny(returnArgs, undefined);
 			fn(1);

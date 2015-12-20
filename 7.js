@@ -14,7 +14,11 @@ describe("Функция bind(fn, context)", function() {
 		expect(binded).toEqual(jasmine.any(Function));
 		});
 		describe("Эта функция", function() {
-			it("должна всегда вызывать фунцкцию fn с контекстом context", function() {
+			it("должна возвращать результат вызова функции fn: var result = bind(fn, context)();", function () {
+				expect(bind(function () { return 1; }, {})()).toEqual(1);
+				expect(bind(function () { return 2; }, {})()).toEqual(2);
+			});
+			it("должна всегда вызывать функцию fn с контекстом context", function() {
 				expect(checkContext()).toEqual('bar');
 				expect(binded()).toEqual('baz');
 			});

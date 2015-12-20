@@ -29,7 +29,7 @@ describe("Функция fmap(mixin, fn)", function() {
 	    	expect(foo.fn.calls.argsFor(1)).toEqual([rand, rand2]);
 	    	expect(foo.fn.calls.argsFor(2)).toEqual([rand, rand2, false, true, 'quux']);
 	    });
-	    it("должна вызывать функцию mixin для результатов фунцкии fn", function() {
+	    it("должна вызывать функцию mixin для результатов функции fn", function() {
 			 var quuux = {};
 			 var res = bar(quuux);
 			 expect(foo.mixin.calls.argsFor(0).shift()).toBe(quuux);

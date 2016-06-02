@@ -1,7 +1,7 @@
 describe("Функция sequence(startingValue, step)", function() {
 	var startingValue = 10,
-			step = 3;
-	var generator  = sequence(startingValue, step);
+		step = 3;
+	var generator = sequence(startingValue, step);
 	it("должна возвращать другую функцию", function() {
 		expect(generator).toBeOfType("Function");
 		expect(generator).toEqual(jasmine.any(Function));
@@ -25,7 +25,7 @@ describe("Функция sequence(startingValue, step)", function() {
 		beforeEach(function() {
 			generator2 = sequence();
 		});
-		
+
 		it("должны быть необязательными", function() {
 			expect(generator2).toBeTruthy();
 		});
@@ -33,10 +33,13 @@ describe("Функция sequence(startingValue, step)", function() {
 			expect(generator2()).toBe(0);
 		});
 
-		it("шаг должнен быть 1 по умолчанию", function() {
+		it("шаг должен быть равен 1 по умолчанию", function() {
 			var g = sequence(4);
 			expect(g()).toBe(4);
 			expect(g()).toBe(5);
+			expect(generator2()).toBe(0);
+			expect(generator2()).toBe(1);
+			expect(generator2()).toBe(2);
 		});
 	});
 	it("можно создать любое количество независимых генераторов", function() {
@@ -46,6 +49,6 @@ describe("Функция sequence(startingValue, step)", function() {
 		expect(generator2).toBeTruthy();
 		expect(generator).not.toBe(generator2);
 		generator();
-		expect(generator()).not.toEqual(generator2());	
+		expect(generator()).not.toEqual(generator2());
 	});
 });

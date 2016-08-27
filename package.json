@@ -1,0 +1,41 @@
+{
+  "name": "javascript-workshop",
+  "version": "1.0.0",
+  "description": "An interactive javascript workshop mostly about functional programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dKab/jasmine-tests.git"
+  },
+  "keywords": [
+    "javascript",
+    "workshop",
+    "functional-programming"
+  ],
+  "author": "Dmitry Kabardinov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dKab/jasmine-tests/issues"
+  },
+  "homepage": "https://github.com/dKab/jasmine-tests#readme",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "exports-loader": "^0.6.3",
+    "highlightjs": "^8.7.0",
+    "imports-loader": "^0.6.5",
+    "jasmine": "^2.4.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.15.0"
+  }
+}
